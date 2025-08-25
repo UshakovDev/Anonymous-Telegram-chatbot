@@ -154,6 +154,9 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
+# Handler saves (автоматически создаваемые файлы)
+.handler-saves/
+
 # Cython debug symbols
 cython_debug/
 
