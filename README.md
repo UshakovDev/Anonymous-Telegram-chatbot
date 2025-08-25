@@ -150,10 +150,10 @@ redis-cli ping  # Должен ответить "PONG"
 
 ## 🌐 Доступ
 
-- Веб-интерфейс: http://localhost:8000/
-- Админ-панель: http://localhost:8000/admin/
-  - **Логин:** `admin` | **Пароль:** `admin123`
-  - **Логин:** `admin2` | **Пароль:** `123`
+- **Веб-интерфейс:** http://localhost:8000/
+- **Админ-панель:** http://localhost:8000/admin/
+  - Создайте суперпользователя: `python manage.py createsuperuser`
+  - Установите пароль: `python manage.py shell -c "from django.contrib.auth.models import User; u = User.objects.get(username='admin'); u.set_password('ваш_пароль'); u.save()"`
 
 ## ⚠️ Безопасность
 

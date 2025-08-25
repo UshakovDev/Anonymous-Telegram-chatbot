@@ -42,7 +42,8 @@ python manage.py bot
 
 - **Веб-интерфейс:** http://localhost:8000/
 - **Админ-панель:** http://localhost:8000/admin/
-  - Логин: `admin` | Пароль: `admin123`
+  - Создайте суперпользователя: `python manage.py createsuperuser`
+  - Установите пароль: `python manage.py shell -c "from django.contrib.auth.models import User; u = User.objects.get(username='admin'); u.set_password('ваш_пароль'); u.save()"`
 
 ## ⚠️ Важно!
 
