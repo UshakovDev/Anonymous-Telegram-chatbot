@@ -170,6 +170,7 @@ redis-cli ping  # Должен ответить "PONG"
 - **[REDIS_CELERY_SETUP.md](REDIS_CELERY_SETUP.md)** - Подробная настройка Redis и Celery
 - **[BOT_SETUP.md](BOT_SETUP.md)** - Настройка Telegram бота
 - **[ADMIN_ACCESS.md](ADMIN_ACCESS.md)** - Доступ к админ-панели
+- **[NEWSLETTER_GUIDE.md](NEWSLETTER_GUIDE.md)** - Руководство по рассылке через админ-панель
 
 ## 📝 Лицензия
 
