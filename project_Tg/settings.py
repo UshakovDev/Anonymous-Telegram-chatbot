@@ -12,6 +12,13 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
+# Импортируем переменные окружения
+try:
+    from env_vars import *
+except ImportError:
+    # Если файл не найден, используем значения по умолчанию
+    pass
+
 
 
 
@@ -23,12 +30,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'SECRET_KEY'
+SECRET_KEY = SECRET_KEY if 'SECRET_KEY' in globals() else 'django-insecure-change-this-in-production'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['queen-cosmo.store', 'www.queen-cosmo.store']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'queen-cosmo.store', 'www.queen-cosmo.store']
 
 
 # Application definition
@@ -80,14 +87,14 @@ WSGI_APPLICATION = 'project_Tg.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'myproject',
-        'USER': 'myprojectuser',
-        'PASSWORD': '********',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'NAME': 'myproject',
+        # 'USER': 'myprojectuser',
+        # 'PASSWORD': '********',
+        # 'HOST': 'localhost',
+        # 'PORT': '',
     }
 }
 
@@ -137,7 +144,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Настройки бота
 
-TOKEN = 'TOKEN'
+TOKEN = TELEGRAM_BOT_TOKEN if 'TELEGRAM_BOT_TOKEN' in globals() else 'TOKEN'
 
 PROXY_URL = 'https://t.me/Dating3ChatBot'
 
